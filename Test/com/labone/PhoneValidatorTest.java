@@ -1,6 +1,5 @@
 package com.labone;
 
-import com.labone.rule.ValidationRule;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -18,15 +17,15 @@ class PhoneValidatorTest {
     }
 
     @Test
-    public void phoneHasIllegalSymbols() {
+    void phoneHasIllegalSymbols() {
         String phone = "+37061234A67";
-        assertTrue(phoneValidator.isValid(phone));
+        assertFalse(phoneValidator.isValid(phone));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"+370612367", "+37061234567", "+370612345678"})
+    @ValueSource(strings = {"+370612367", "+370612345678"})
     void phoneTooLongOrTooShort(String phone) {
-        assertTrue(phoneValidator.isValid(phone));
+        assertFalse(phoneValidator.isValid(phone));
     }
 
     @Test

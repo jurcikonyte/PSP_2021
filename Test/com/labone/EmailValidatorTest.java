@@ -11,7 +11,7 @@ class EmailValidatorTest {
     private static final EmailValidator emailValidator = new EmailValidator();
 
     @Test
-    void emailCorrect() {
+    public void emailCorrect() {
         String email = "test@mif.lt";
         assertTrue(emailValidator.isValid(email));
     }
