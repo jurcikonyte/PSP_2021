@@ -36,10 +36,4 @@ class PhoneValidatorTest {
         assertEquals("+37062587458", phone);
     }
 
-    @Test
-    public void checkCustomPhoneValidation() {
-        String phone = "871234567";
-        PhoneValidator customPhoneNumberValidator = new PhoneValidator(new ValidationRule("87", 9));
-        assertTrue(phoneValidator.isValid(phone));
-    }
 }
