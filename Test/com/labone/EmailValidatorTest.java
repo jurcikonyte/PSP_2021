@@ -23,14 +23,20 @@ class EmailValidatorTest {
     }
 
     @Test
-    void emailWithIllegalSymbols() {
-        String email = "test@mif@lt";
+    void emailWithMultipleAtSymbols() {
+        String email = "te@st@mif.lt";
         assertFalse(emailValidator.isValid(email));
     }
 
     @Test
-    void emailHasBadDomainOrTLD() {
-        String email = "t_est@mif.l_t";
+    void emailWithIllegalSymbols() {
+        String email = "te#st@mif.lt";
+        assertFalse(emailValidator.isValid(email));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"test@mi_f.lt", "test@mif.l%t", "test@mi=f.lt"})
+    void emailHasBadDomainOrTLD(String email) {
         assertFalse(emailValidator.isValid(email));
     }
 
