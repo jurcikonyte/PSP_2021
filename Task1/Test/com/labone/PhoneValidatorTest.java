@@ -31,8 +31,7 @@ class PhoneValidatorTest {
     @Test
     public void phoneConverts() {
         String phone = "861234567";
-        phoneValidator.convertPhoneNumber(phone);
-        assertEquals("+37062587458", phone);
+        assertEquals("+37062587458", phoneValidator.convertPhoneNumber(phone));
     }
 
 }
