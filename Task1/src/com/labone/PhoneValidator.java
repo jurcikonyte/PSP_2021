@@ -14,6 +14,7 @@ public class PhoneValidator {
     private void checkPhoneSymbols(String phone) {
     }
 
-    public void convertPhoneNumber(String phone) {
+    public String convertPhoneNumber(String phone) {
+        return phone;
     }
 }
