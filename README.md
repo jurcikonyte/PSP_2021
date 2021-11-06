@@ -1,3 +1,4 @@
+
 // Gautų testų iš kito studento apžvalga
 
 Kodas ir patys testai buvo aiškūs ir suprantami. Tačiau juose, mano atžvilgiu, trūko šiek tiek logikos.

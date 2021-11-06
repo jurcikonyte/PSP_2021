@@ -22,16 +22,16 @@ class PhoneValidatorTest {
         assertFalse(phoneValidator.isValid(phone));
     }
 
+
     @ParameterizedTest
     @ValueSource(strings = {"+370612367", "+370612345678"})
     void phoneTooLongOrTooShort(String phone) {
-        assertFalse(phoneValidator.isValid(phone));
+        assertFalse(phoneValidator.isValidByCountryCode(phone, "LT"));
     }
 
     @Test
     public void phoneConverts() {
-        String phone = "861234567";
-        assertEquals("+37062587458", phoneValidator.convertPhoneNumber(phone));
+        String phone = "861234568";
+        assertEquals("+37061234568", phoneValidator.convertPhoneNumber(phone));
     }
-
 }
